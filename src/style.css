@@ -55,6 +55,11 @@ a {
   margin: 0.3rem;
 }
 
+.likeBtn {
+  background: none;
+  border: none;
+}
+
 .logo {
   margin: 1rem;
 }

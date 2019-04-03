@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,13 +68,14 @@
 
 
     <!-- Sign up modal -->
-    <div id="modal-sign-up" class="modal">
+    <div id="modal-sign-up" class="modal loggedOut">
       <img class="logo singup-logo" alt="Checkpoint_logo.png"
       src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
       <div class="modal-content">
         <h2>Sign up</h2>
         <form id="signup-form">
-          <div class="input-field">
+            <label type="displayName" for="signup-nickname">Nickname</label>
+            <input type="text" id="signup-nickname">
             <label for="signup-email">E-mail</label>
             <input type="email" id="signup-email" required>
             <label for="verified-email">Verificar e-mail</label>
@@ -92,7 +93,7 @@
     </div>
 
     <!-- Login modal -->
-    <div id="modal-login" class="modal">
+    <div id="modal-login" class="modal loggedOut">
       <img class="logo login-logo" alt="Checkpoint_logo.png"
       src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
       <div class="modal-content">
@@ -154,7 +155,7 @@
     <div class="container">
       <form id='add-post'>
         <input type="text" name="post" placeholder="Escribe aquí :)">
-        <button>Publicar</button>
+        <button class="blackBtn">Publicar</button>
       </form>
       <ul id="posts-list"></ul>
     </div>
@@ -177,7 +178,7 @@
       src="https://drive.google.com/uc?export=view&id=1TjbIbQmgxoy15DSwcvq-NKL-Jh4zw_aR"></button>
     <button class="like likeBtn" id="gameOverBtn"><img class="imgBtn" alt="gameOverBtn"
       src="https://drive.google.com/uc?export=view&id=13S3-ICqv2NZk_0xgqbYYXDskUCjAPday"></button>
-      
+
     <!-- UPDATE POSTS TEST -->
     <div>
       <form id='test'>
@@ -193,12 +194,18 @@
     <script>
       // Initialize Firebase
       var config = {
-        apiKey: "AIzaSyAA0MVHLupaDUBwvctequpz-8aDt9JNpb4",
-        authDomain: "checkpoint-2ea0e.firebaseapp.com",
-        databaseURL: "https://checkpoint-2ea0e.firebaseio.com",
-        projectId: "checkpoint-2ea0e",
-        storageBucket: "checkpoint-2ea0e.appspot.com",
-        messagingSenderId: "32985801835"
+        // apiKey: "AIzaSyAA0MVHLupaDUBwvctequpz-8aDt9JNpb4",
+        // authDomain: "checkpoint-2ea0e.firebaseapp.com",
+        // databaseURL: "https://checkpoint-2ea0e.firebaseio.com",
+        // projectId: "checkpoint-2ea0e",
+        // storageBucket: "checkpoint-2ea0e.appspot.com",
+        // messagingSenderId: "32985801835"
+        apiKey: "AIzaSyBAVvJLOmhHJ1lGts9lBJ-3rKF1lIWynck",
+        authDomain: "checkpoint-552ef.firebaseapp.com",
+        databaseURL: "https://checkpoint-552ef.firebaseio.com",
+        projectId: "checkpoint-552ef",
+        storageBucket: "checkpoint-552ef.appspot.com",
+        messagingSenderId: "727239321560"
       };
       firebase.initializeApp(config);
       const auth = firebase.auth();

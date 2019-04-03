@@ -62,6 +62,7 @@ const renderPost = (doc) => {
 //     })
 // })
 
+
 //saving posts
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -84,6 +85,7 @@ db.collection('posts').onSnapshot(snapshot => {
         }
     })
 })
+
 
 
 // 'use strict'
