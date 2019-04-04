@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+signupForm<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,46 +11,89 @@
 
 <body>
   <main>
-    <h1>Check Point Red Social Gamer</h1>
     <nav>
-      <form id="formRegister">
-        <h4>Registrate</h4>
-        <label for="name">Nombre:</label>
-        <input id="name" required type="text" placeholder="Ingresa tu nombre"><br />
-        <label for="nickname">¿Con que nombre quieres que te vean los demas usuarios?</label>
-        <input id="nickname" required type="text" placeholder="Ingresa tu nickname"><br />
-        <label for="date">¿Cuál es tu año de naciemiento?:</label>
-        <input id="date" required type="text" placeholder="Año de naciemiento"><br />
-        <label for="email">¿Cuál es tu correo electrónico?</label>
-        <input id="email" required type="email" placeholder="Ingresa e-mail/correo"><br />
-        <label for="password">Ingresa una contraseña</label>
-        <input id="password" required type="password" placeholder="Ingresa contraseña"><br />
-        <button id="send">Registrar</button>
-
-        <!-- <div id="errores" style="display:none;">
-          <p></p>
-        </div> -->
-
-      </form>
-      <form id="logInForm">
-        <h4>Ingresa con tu cuenta existente</h4>
-        <input id="emailLog" type="email" placeholder="Ingresa e-mail/correo">
-        <input id="passwordLog" type="password" placeholder="Ingresa contraseña">
-        <button id="logIn">Entrar</button>
-      </form>
+      <a href="#" class="logo left"><img alt="Checkpoint_logo.png" src=""></a>
+      <ul class="right" id="">
+        <li class="loggedOut">
+          <a href="#" class="whiteText" data-target="logInForm" id="goToLogIn">Iniciar sesión</a>
+        </li>
+        <li class="loggedOut">
+          <a href="#" class="whiteText" data-target="signupForm" id="goToRegister">Registrar</a>
+        </li>
+        <li class="loggedIn">
+          <a href="#" class="whiteText" data-target="profileBlock" id="goToProfile">Perfil</a>
+        </li>
+        <li class="loggedIn">
+          <a href="#" class="whiteText" data-target="content" id="goToNewsfeed">Muro</a>
+        </li>
+        <li class="loggedIn">
+          <a href="#" class="whiteText" data-target="gameNews" id="goToGameNews">Novedades</a>
+        </li>
+        <li class="loggedIn">
+          <a href="#" class="whiteText" data-target="logInForm" id="logOutBtn">Cerrar sesión</a>
+        </li>
+      <ul>
     </nav>
 
-    <div id="content" style="display:none">
+  <section class="loggedOut welcomeBlock" id="logInBlock">
+    <img class="logo loginLogo" alt="Checkpoint_logo.png"
+    src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
+    <h1 class="whiteText">Cambia tu experiencia de juego</h1>
+    <h2 class="whiteText">comparte tus logros</br>y obtén recompensas</h2>
+    <form class="loggedOut" id="logInForm">
+      <h4 class="whiteText">Ingresa con tu cuenta existente</h4>
+      <input class="input" id="emailLog" type="email" placeholder="Ingresa e-mail/correo">
+      <input class="input" id="passwordLog" type="password" placeholder="Ingresa contraseña">
+      <button class="blackBtn" id="logIn">Entrar</button>
+    </form>
+  </section>
+
+  <section class="loggedOut welcomeBlock" id="SignInBlock">
+    <form class="loggedOut" id="signupForm">
+      <h4 class="whiteText">Registrate</h4>
+      <label class="whiteText" for="name">Nombre:</label>
+      <input class="input" id="name" required type="text" placeholder="Ingresa tu nombre"><br />
+      <label class="whiteText" for="nickname">¿Con que nombre quieres que te vean los demas usuarios?</label>
+      <input class="input" id="nickname" required type="text" placeholder="Ingresa tu nickname"><br />
+      <label class="whiteText" for="date">¿Cuál es tu año de naciemiento?:</label>
+      <input class="input" id="date" required type="text" placeholder="Año de naciemiento"><br />
+      <label class="whiteText" for="email">¿Cuál es tu correo electrónico?</label>
+      <input class="input" id="email" required type="email" placeholder="Ingresa e-mail/correo"><br />
+      <label class="whiteText" for="password">Ingresa una contraseña</label>
+      <input class="input" id="password" required type="password" placeholder="Ingresa contraseña"><br />
+      <button class="blackBtn" id="send">Registrar</button>
+
+      <!-- <div id="errores" style="display:none;">
+      <p></p>
+    </div> -->
+
+  </form>
+  </section>
+
+    <section class="loggedIn newsfeed" id="content" style="display:none">
       <h2>Bienvenido</h2>
-      <button id="close1">Cerrar sesión</button>
-      <div class='postsContainer'>
+      <!-- <button id="logOutBtn">Cerrar sesión</button> -->
+
+      <div class="postsContainer">
         <form id="addPost">
           <input type="text" name="post" placeholder="¿Qué quieres compartir?">
           <button>Publicar</button>
         </form>
-        <ul id="postList"></ul>
+        <ul class="ulPost" id="postList"></ul>
+        <!-- Botones para like -->
+        <button class="like likeBtn" id="loveItBtn"><img class="imgBtn" alt="loveItBtn"
+          src="https://drive.google.com/uc?export=view&id=1URPQIxmr9NDjhTLkBDPNcEidLJ1eYzeQ"></button>
+        <button class="like likeBtn" id="lvlUpBtn"><img class="imgBtn" alt="lvlUpBtn"
+          src="https://drive.google.com/uc?export=view&id=1TjbIbQmgxoy15DSwcvq-NKL-Jh4zw_aR"></button>
+        <button class="like likeBtn" id="gameOverBtn"><img class="imgBtn" alt="gameOverBtn"
+          src="https://drive.google.com/uc?export=view&id=13S3-ICqv2NZk_0xgqbYYXDskUCjAPday"></button>
       </div>
-    </div>
+    </section>
+
+    <section class="loggedIn" id="profileBlock">
+      <h4>Perfil de usuario</h4><br />
+      <div class="accountDetails"></div>
+    </section>
 
   </main>
 
@@ -67,11 +110,11 @@
 
   <!-- Configuracion de firebase -->
   <script src="firebase.js"></script>
-
+  <script src="auth.js"></script>
   <script src="main.js"></script>
   <script src="posts.js"></script>
   <!-- <script src="main1.js"></script> -->
-  <link rel="stylesheet" href="style.css">
+
 </body>
 
 </html>
@@ -132,7 +175,7 @@
     </div> -->
 
     <!-- Login modal -->
-    <div id="modal-login" class="modal loggedOut">
+    <!-- <div id="modal-login" class="modal loggedOut">
       <img class="logo login-logo" alt="Checkpoint_logo.png"
       src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
       <div class="modal-content">
@@ -165,14 +208,6 @@
       </div>
     </div> -->
 
-    <!-- Newsfeed -->
-    <div class="container">
-      <form id='add-post'>
-        <input type="text" name="post" placeholder="Escribe aquí :)">
-        <button class="blackBtn">Publicar</button>
-      </form>
-      <ul id="posts-list"></ul>
-    </div>
     <!-- <div id="modal-newsfeed" class="modal">
       <div class="modal-content">
         <form id="create-post">
@@ -185,21 +220,14 @@
       </div>
     </div> -->
 
-    <!-- Botones para like -->
-    <button class="like likeBtn" id="loveItBtn"><img class="imgBtn" alt="loveItBtn"
-      src="https://drive.google.com/uc?export=view&id=1URPQIxmr9NDjhTLkBDPNcEidLJ1eYzeQ"></button>
-    <button class="like likeBtn" id="lvlUpBtn"><img class="imgBtn" alt="lvlUpBtn"
-      src="https://drive.google.com/uc?export=view&id=1TjbIbQmgxoy15DSwcvq-NKL-Jh4zw_aR"></button>
-    <button class="like likeBtn" id="gameOverBtn"><img class="imgBtn" alt="gameOverBtn"
-      src="https://drive.google.com/uc?export=view&id=13S3-ICqv2NZk_0xgqbYYXDskUCjAPday"></button>
 
     <!-- UPDATE POSTS TEST -->
-    <div>
+    <!-- <div>
       <form id='test'>
         <span id="spanTest">Holi</span>
         <button id='buttonTest'>Editar</button>
       </form>
-    </div>
+    </div> -->
 
 
 <!-- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
@@ -238,6 +266,7 @@
     <script src="auth.js"></script>
     <script src="main.js"></script>
     <!-- <script src="main1.js"></script> -->
+
 </body>
 
-</html> -->
+</html>

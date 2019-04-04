@@ -2,10 +2,10 @@
 
 const postList = document.querySelector('#postList');
 const form = document.querySelector('#addPost');
-const db = firebase.firestore();
+// const db = firebase.firestore();
 const user = firebase.auth().currentUser;
 
-const renderPost = (doc) => {
+const setupPosts = (doc) => {
     let li = document.createElement('li');
     let post = document.createElement('span');
     let deletePost = document.createElement('button');
@@ -80,7 +80,8 @@ form.addEventListener('submit', (e) => {
     })
     form.post.value = '';
 });
-
+// SimpleDateFormat sfd = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+// sfd.format(new Date(timestamp))
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         //real-time listener

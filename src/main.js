@@ -1,28 +1,59 @@
 'use strict'
-//Despues de que termino de cargar el html entonces entro al load del window.
-firebase.auth().onAuthStateChanged(user => {
+// //Despues de que termino de cargar el html entonces entro al load del window
+// auth.onAuthStateChanged(user => {
+//   if (user) {
+//     if (user.emailVerified) {
+//       document.getElementById('content').style.display = 'block';
+//     }
+//     // show(user);
+//     // User is signed in
+//     // var displayName = user.displayName;
+//     // var email = user.email;
+//     //console.log(user);
+//     // var emailVerified = user.emailVerified;
+//     // var photoURL = user.photoURL;
+//     // var isAnonymous = user.isAnonymous;
+//     // var uid = user.uid;
+//     // var providerData = user.providerData;
+//     // ...
+//     console.log('Existe usuario activo');
+//   } else {
+//     // User is signed out
+//     console.log('No existe usuario activo');
+//     // ...
+//   }
+// });
+
+const postList = document.querySelector('.ulPost');
+const loggedInLinks = document.querySelectorAll('.loggedIn');
+const loggedOutLinks = document.querySelectorAll('.loggedOut');
+const accountDetails = document.querySelector('.accountDetails');
+
+const setupUI = (user) => {
   if (user) {
-    if (user.emailVerified) {
-      document.getElementById('content').style.display = 'block';
-    }
-    // show(user);
-    // User is signed in.
-    // var displayName = user.displayName;
-    // var email = user.email;
-    //console.log(user);
-    // var emailVerified = user.emailVerified;
-    // var photoURL = user.photoURL;
-    // var isAnonymous = user.isAnonymous;
-    // var uid = user.uid;
-    // var providerData = user.providerData;
-    // ...
-    console.log('Existe usuario activo');
+    //show account info
+    const html = `
+      <div><h4>Sesión iniciada como ${user.uid}</h4>
+        <p>Nickname: ${user.nick}</p>
+        <p>correo: ${user.email}</p>
+        <p>Nombre: ${user.name}</p>
+        <p>Año de nacimiento: ${user.date}</p>
+      </div>
+    `;
+    accountDetails.innerHTML = html;
+
+    //toggle in UI elements
+    loggedInLinks.forEach(item => item.style.display: 'block');
+    loggedOutLinks.forEach(item => item.style.display: 'none');
   } else {
-    // User is signed out.
-    console.log('No existe usuario activo');
-    // ...
-  }
-});
+    //hide account info
+    accountDetails.innerHTML = '';
+
+    //toggle out UI elements
+    loggedInLinks.forEach(item => item.style.display: 'none');
+    loggedOutLinks.forEach(item => item.style.display: 'block');
+  };
+};
 
 window.addEventListener("load", () => {
 
@@ -49,7 +80,7 @@ window.addEventListener("load", () => {
         nick: document.getElementById('nickname').value,
         date: document.getElementById('date').value
       }).then(function () {
-        verify(); //manda correo de verificacion.
+        verify(); //manda correo de verificacion
         console.log('usuario agregado correctamente');
       }).then(post => {
         db.collection('users').doc(cred.uid).collection("posts").add({
@@ -60,7 +91,7 @@ window.addEventListener("load", () => {
             console.log(error1);
           });
       }).catch(function (error) {
-        // Handle Errors here.
+        // Handle Errors here
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode);
@@ -85,7 +116,7 @@ window.addEventListener("load", () => {
 
       firebase.auth().signInWithEmailAndPassword(correoLog, passwordLog)
         .catch(function (error) {
-          // Handle Errors here.
+          // Handle Errors here
           var errorCode = error.code;
           var errorMessage = error.message;
           console.log(errorCode);
@@ -94,15 +125,15 @@ window.addEventListener("load", () => {
     });
 
 
-    document.getElementById("close1").addEventListener('click', () => {
+    document.getElementById("logOutBtn").addEventListener('click', () => {
       firebase.auth().signOut()
         .then(function () {
-          // Sign-out successful.
+          // Sign-out successful
           console.log('Saliendo...')
           document.getElementById('content').style.display = 'none';
         })
         .catch(function (error) {
-          // An error happened.
+          // An error happened
         });
     });
 
@@ -111,14 +142,14 @@ window.addEventListener("load", () => {
 
       user.sendEmailVerification()
         .then(function () {
-          // Email sent.
+          // Email sent
           console.log('Enviando correo...');
           alert('email enviado');
           firebase.auth().signOut();
           document.getElementById('formRegister').reset();
         })
         .catch(function (error) {
-          // An error happened.
+          // An error happened
         });
     };
 
