@@ -7,6 +7,7 @@ const user = firebase.auth().currentUser;
 
 const renderPost = (doc) => {
     let li = document.createElement('li');
+    let nick = document.createElement('span');
     let post = document.createElement('span');
     let deletePost = document.createElement('button');
     let updatePost = document.createElement('button');
@@ -14,6 +15,7 @@ const renderPost = (doc) => {
     let likePost = document.createElement('button');
 
     li.setAttribute('data-id', doc.id);
+    nick.textContent = doc.data().nick;
     post.textContent = doc.data().post;
     deletePost.textContent = 'Eliminar';
     updatePost.textContent = 'Editar';
@@ -21,6 +23,7 @@ const renderPost = (doc) => {
 
     let getLikes = doc.data().likes;
     nLikes.textContent = getLikes;
+    li.appendChild(nick);
     li.appendChild(post);
     li.appendChild(updatePost);
     li.appendChild(deletePost);
@@ -73,8 +76,13 @@ likePost.addEventListener('click', (e) => {
 
 
 form.addEventListener('submit', (e) => {
+  const user = firebase.auth().currentUser.uid;
+  // const nick = db.collection('users').doc(cred.uid).get().then(doc => {
+  //   nick: document.getElementById('nickname').value
+  // });
     e.preventDefault();
     db.collection('users').doc(firebase.auth().currentUser.uid).collection('posts').add({
+        nick: `${user}`,
         post: form.post.value,
         likes: 0
     })

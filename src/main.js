@@ -53,6 +53,7 @@ window.addEventListener("load", () => {
         console.log('usuario agregado correctamente');
       }).then(post => {
         db.collection('users').doc(cred.uid).collection("posts").add({
+          nick: "nickname",
           post: "Hola, esta es una publicación de prueba.",
           likes: 0
         })
