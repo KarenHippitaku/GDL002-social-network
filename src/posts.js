@@ -3,7 +3,7 @@
 const postList = document.querySelector('#postList');
 const form = document.querySelector('#addPost');
 const db = firebase.firestore();
-const user = firebase.auth().currentUser;
+// const user = firebase.auth().currentUser;
 
 const renderPost = (doc) => {
     let li = document.createElement('li');
@@ -36,9 +36,9 @@ const renderPost = (doc) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
         db.collection('users').doc(firebase.auth().currentUser.uid).collection('posts').doc(id).delete();
-    })
+    });
 
-    updatePost.addEventListener('click', (e) => {
+    updatePost.addEventListener('click', () => {
         const oldElement = post;
         const oldText = oldElement.textContent;
         const newElement = document.createElement('input');
@@ -56,8 +56,8 @@ const renderPost = (doc) => {
                 post: newElement.value
             });
             updatePost.textContent = 'Editar';
-        })
-    })
+        });
+    });
     //Update likes
 likePost.addEventListener('click', (e) => {
     let id = e.target.parentElement.getAttribute('data-id');
@@ -67,11 +67,11 @@ likePost.addEventListener('click', (e) => {
         currentLikes += 1;
         getPost.update({
             likes: currentLikes
-        })
+        });
         nLikes.textContent = currentLikes;
-    })
-})
-}
+    });
+});
+};
 
 
 
@@ -80,12 +80,16 @@ form.addEventListener('submit', (e) => {
   // const nick = db.collection('users').doc(cred.uid).get().then(doc => {
   //   nick: document.getElementById('nickname').value
   // });
+   // const nick = db.collection('users').doc(id).get().then(doc => {
+   //   e.preventDefault();
+   //   nick: document.getElementById('nickname').value
+   //    });
     e.preventDefault();
     db.collection('users').doc(firebase.auth().currentUser.uid).collection('posts').add({
         nick: `${user}`,
         post: form.post.value,
         likes: 0
-    })
+    });
     form.post.value = '';
 });
 
@@ -97,7 +101,7 @@ firebase.auth().onAuthStateChanged(user => {
             let changes = snapshot.docChanges;
             changes.forEach(change => {
                 if (change.type === 'added') {
-                    renderPost(change.doc)
+                    renderPost(change.doc);
                 } else if (change.type === 'removed') {
                     let li = postList.querySelector('[data-id=' + change.doc.id + ']');
                     postList.removeChild(li);
@@ -107,6 +111,6 @@ firebase.auth().onAuthStateChanged(user => {
                     renderPost(change.doc);
                 }
             });
-        })
+        });
     }
-})
+});

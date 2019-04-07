@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 //Despues de que termino de cargar el html entonces entro al load del window.
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
@@ -51,7 +51,7 @@ window.addEventListener("load", () => {
       }).then(function () {
         verify(); //manda correo de verificacion.
         console.log('usuario agregado correctamente');
-      }).then(post => {
+      }).then(() => {
         db.collection('users').doc(cred.uid).collection("posts").add({
           nick: "nickname",
           post: "Hola, esta es una publicación de prueba.",
@@ -99,12 +99,12 @@ window.addEventListener("load", () => {
       firebase.auth().signOut()
         .then(function () {
           // Sign-out successful.
-          console.log('Saliendo...')
+          console.log('Saliendo...');
           document.getElementById('content').style.display = 'none';
-        })
-        .catch(function (error) {
-          // An error happened.
         });
+        // .catch(function (error) {
+        //   // An error happened.
+        // });
     });
 
     function verify() {
@@ -121,7 +121,7 @@ window.addEventListener("load", () => {
         .catch(function (error) {
           // An error happened.
         });
-    };
+    }
 
   });//Fin del load del window
 
@@ -170,4 +170,4 @@ window.addEventListener("load", () => {
   //     })
   // }
   //
-})
+});

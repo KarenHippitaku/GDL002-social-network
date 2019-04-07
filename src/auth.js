@@ -1,23 +1,24 @@
-const signupForm = document.querySelector('#signup-form');
-// let user =
-firebase.auth().createUser(user => {
-  // if (!user)
-  signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  db.collection("Users data").doc(uid).add({
-    email: "blah123@mel.com",
-    emailVerified: false,
-    password: "blah123",
-    displayName: "Equis Nombre",
-    photoUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
-})
-.then(function(userRecord){
-    console.log("nuevo usario creado:", userRecord.uid);
-})
-.catch(function(error){
-    console.log("error creando usuario");
-})
-
+// const signupForm = document.querySelector('#signup-form');
+// // let user =
+// firebase.auth().createUser(user => {
+//   // if (!user)
+//   signupForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   db.collection("Users data").doc(uid).add({
+//     email: "blah123@mel.com",
+//     emailVerified: false,
+//     password: "blah123",
+//     displayName: "Equis Nombre",
+//     photoUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+// })
+// )
+// .then(function(userRecord){
+//     console.log("nuevo usario creado:", userRecord.uid);
+// })
+// .catch(function(error){
+//     console.log("error creando usuario");
+// })
+// )
 // //get data
 // db.collection('posts').get().then(snapshot => {
 //     setupPosts(snapshot.docs)
