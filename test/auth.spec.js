@@ -10,9 +10,27 @@
 //    expect(example()).toBe('example');
 //  });
 //});
-require('../src/main.js');
-import MockFirebase from '../_mocks_/firebase.mock.js';
-global.firebase = MockFirebase();
+
+// require('../src/main.js');
+// import MockFirebase from '../_mocks_/firebase.mock.js';
+// global.firebase = MockFirebase();
+
+import MockFirebase from 'mock-cloud-firestore';
+const fixtureData = {
+  __collection__: {
+    users: {
+      __doc__: {
+        user_a: {
+          email: 'test@test.la',
+          username: 'user_a'
+                }
+              }
+            }
+          }
+        },
+
+global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
+
 import { verify } from '../src/main.js';
 
 const firebase =
