@@ -1,6 +1,6 @@
 'use strict';
-const auth = firebase.auth();
-const db = firebase.firestore();
+// const auth = firebase.auth();
+// const db = firebase.firestore();
 const postList = document.querySelector('#postsList');
 const form = document.querySelector('#addPost');
 

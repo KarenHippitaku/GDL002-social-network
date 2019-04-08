@@ -100,7 +100,7 @@ Pantalla5
 
 Log-in
 
-![mobile_Pantalla01](https://drive.google.com/uc?export=view&id=1grOu79Sf_VQt237Cl1GIeZFnYog2H3qX)
+![mobile_Pantalla01](https://drive.google.com/uc?export=view&id=1uXbAj4ccyQw8dE4V34b2UyIDE5L3Bwix)
 
 Registro
 

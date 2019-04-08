@@ -10,128 +10,128 @@
 </head>
 
 <body>
+  <header>
+    <img class="logo" alt="Checkpoint_logo.png"
+    src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
 
+    <!-- Navigation bar -->
+    <section id="modal-navbar" class="topnav page">
+      <div>
+        <a href="#newsfeed" id="linkNewsFeed">Muro</a>
+        <a href="#modal-profile" id="linkProfile">Perfil</a>
+        <a href="#modal-account" id="linkAccount">Configuración</a>
+        <a href="#" id="logout">Cerrar sesión</a>
+      </div>
+    </section>
+  </header>
+  <content>
 
-  <!-- Sign up modal -->
-  <div id="modal-sign-up" class="modal">
-    <img class="logo singup-logo" alt="Checkpoint_logo.png"
-      src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
-    <div class="modal-content">
-      <h2>Sign up</h2>
-      <form id="signup-form">
-        <div class="input-field">
-          <label for="signup-name">Nombre</label>
-          <input type="text" id="signup-name">
-          <label for="signup-nickname">Nickname</label>
-          <input type="text" id="signup-nickname" required>
-          <label for="signup-bd">Año de nacimiento</label>
-          <input type="text" id="signup-bd" required>
-        </div>
-        <div class="input-field">
-          <label for="signup-email">E-mail</label>
-          <input type="email" id="signup-email" required>
-          <label for="verified-email">Verificar e-mail</label>
-          <input type="email" id="verified-email" required>
-        </div>
-        <div class="input-field">
-          <label for="signup-password">Contraseña</label>
-          <input type="password" id="signup-password" required>
-          <label for="verified-password">Verificar contraseña</label>
-          <input type="password" id="verified-password" required>
-        </div>
-        <input class="blackBtn enterBtn" type="submit" value="Registrar">
-      </form>
-    </div>
-  </div>
+    <!-- Login modal -->
+    <section id="modal-login" class="modal">
+      <div class="modal-content">
+        <h2 class="whiteText">Log In</h2>
+        <form id="login-form">
+          <div class="input-field">
+            <label for="login-email">E-mail</label>
+            <input class="whiteInput" type="email" id="login-email" required>
+          </div>
+          <div class="login-field">
+            <label for="login-password">Contraseña</label>
+            <input class="whiteInput" type="password" id="login-password" required>
+          </div>
+          <input class="blackBtn enterBtn" type="submit" value="Inciar sesión">
+          <p class="whiteText">¿Aún no tienes cuenta?</p>
+          <a href="#modal-sign-up" class="blackBtn" id="linkRegister">Regístrate</a>
+        </form>
+      </div>
+    </section>
 
-  <!-- Login modal -->
-  <div id="modal-login" class="modal">
-    <img class="logo login-logo" alt="Checkpoint_logo.png"
-      src="https://drive.google.com/uc?export=view&id=1qZHg6D3qFRG7D16LuBLyIx2uvb6sHvgY">
-    <div class="modal-content">
-      <h2>Log In</h2>
-      <form id="login-form">
-        <div class="input-field">
-          <label for="login-email">E-mail</label>
-          <input type="email" id="login-email" required>
-        </div>
-        <div class="login-field">
-          <label for="login-password">Contraseña</label>
-          <input type="password" id="login-password" required>
-        </div>
-        <input class="blackBtn enterBtn" type="submit" value="Inciar sesión">
-      </form>
-    </div>
-  </div>
-
-  <!-- Navigation bar -->
-  <nav>
-    <div class="nav-wrapper-container">
-      <ul id="nav-mobile">
-        <!-- navigation logo -->
-        <li><img class="logo nav-logo" alt="Check-point_logo.png"
-            src="https://drive.google.com/uc?export=view&id=1p79-A_uABKO4CS9Rl_pd1ccLYOdmtcCg"></li>
-        <li class="logged-in">
-          <a href="#" data-target="modal-account">Perfil</a>
-        </li>
-        <li class="logged-in">
-          <a href="#" data-target="newsfeed">Inicio</a>
-        </li>
-        <li class="logged-in">
-          <a href="#" data-target="modal-account">Cuenta</a>
-        </li>
-        <li class="logged-in">
-          <a href="#" id="logout">Cerrar sesión</a>
-        </li>
-      </ul>
-    </div>
+    <!-- Sign up modal -->
+    <section id="modal-sign-up" class="modal page">
+      <div class="modal-content">
+        <h2 class="whiteText">Sign up</h2>
+        <form id="signup-form" autocomplete="off">
+          <div class="input-field">
+            <label class="whiteText" for="signup-name">Nombre</label>
+            <input class="whiteInput" type="text" id="signup-name">
+            <label class="whiteText" for="signup-nickname">Nickname</label>
+            <input class="whiteInput" type="text" id="signup-nickname" required>
+            <label class="whiteText" for="signup-bd">Año de nacimiento</label>
+            <input class="whiteInput" type="date" id="signup-bd" required>
+          </div>
+          <div class="input-field">
+            <label class="whiteText" for="signup-email">E-mail</label>
+            <input class="whiteInput" type="email" id="signup-email" required>
+            <label class="whiteText" for="verified-email">Verificar e-mail</label>
+            <input class="whiteInput" type="email" id="verified-email" required>
+          </div>
+          <div class="input-field">
+            <label class="whiteText" for="signup-password">Contraseña</label>
+            <input class="whiteInput" type="password" id="signup-password" required>
+            <label class="whiteText" for="verified-password">Verificar contraseña</label>
+            <input class="whiteInput" type="password" id="verified-password" required>
+          </div>
+          <input class="blackBtn enterBtn" type="submit" value="Registrar">
+        </form>
+        <p class="whiteText">Ya tengo una cuenta</p>
+        <a href="#modal-login" class="blackBtn" id="linkLogin">Inicar Sesion</a>
+      </div>
+    </section>
 
     <!-- Profile -->
-    <div id="modal-profile" class="modal">
-      <section>
-        <h2>¡Hola </h2>
+    <section id="modal-profile" class="page">
+      <div>
+        <h2 class="whiteText">¡Hola!</h2>
         <span id="profile-nickname"></span>
-      </section>
+      </div>
       <figure id="profile-pic"></figure>
-    </div>
+    </section>
 
     <!-- Newsfeed -->
-    <div class="container">
+    <section id="modal-wallpost" class="page">
       <form id='addPost'>
-        <input type="text" name="post" placeholder="¿Qué quieres compartir?">
-        <button>Publicar</button>
+        <textarea rows="4" cols="50" name="post" placeholder="¿Qué quieres compartir?">
+        </textarea>
+        <button class="blackBtn">Publicar</button>
       </form>
       <ul id="postsList"></ul>
-    </div>
+    </section>
 
     <!-- Modal account -->
-    <div id="modal-account" class="modal">
+    <section id="modal-account" class="modal page">
       <div class="modal-content">
         <h2>Actualizar cuenta</h2>
         <form id="account-details">
           <div class="input-field">
-            <label for="update-name">Name: </label>
+            <label class="whiteText" for="update-name">Name: </label>
             <input type="text" id="update-name">
           </div>
           <div class="input-field">
-            <label for="update-nickname">Nickname: </label>
+            <label class="whiteText" for="update-nickname">Nickname: </label>
             <input type="text" id="update-nickname">
           </div>
           <div>
-            <label for="update-pic">Foto de perfil:</label>
+            <label class="whiteText" for="update-pic">Foto de perfil:</label>
           </div>
-          <input type="submit" value="Guardar">
+          <input class="blackBtn" type="submit" value="Guardar">
         </form>
       </div>
-    </div>
+    </section>
 
-    <!-- Botones para like -->
+
+    <!-- Botones para like
     <button class="like likeBtn" id="loveItBtn"><img class="imgBtn" alt="loveItBtn"
-        src="https://drive.google.com/uc?export=view&id=1URPQIxmr9NDjhTLkBDPNcEidLJ1eYzeQ"></button>
+    src="https://drive.google.com/uc?export=view&id=1URPQIxmr9NDjhTLkBDPNcEidLJ1eYzeQ"></button>
     <button class="like likeBtn" id="lvlUpBtn"><img class="imgBtn" alt="lvlUpBtn"
-        src="https://drive.google.com/uc?export=view&id=1TjbIbQmgxoy15DSwcvq-NKL-Jh4zw_aR"></button>
+    src="https://drive.google.com/uc?export=view&id=1TjbIbQmgxoy15DSwcvq-NKL-Jh4zw_aR"></button>
     <button class="like likeBtn" id="gameOverBtn"><img class="imgBtn" alt="gameOverBtn"
-        src="https://drive.google.com/uc?export=view&id=13S3-ICqv2NZk_0xgqbYYXDskUCjAPday"></button>
+    src="https://drive.google.com/uc?export=view&id=13S3-ICqv2NZk_0xgqbYYXDskUCjAPday"></button>
+
+    <img class="logo nav-logo" alt="Check-point_logo.png"
+    src="https://drive.google.com/uc?export=view&id=1p79-A_uABKO4CS9Rl_pd1ccLYOdmtcCg">
+  -->
+
+  </content>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
@@ -155,12 +155,14 @@
       //   messagingSenderId: "32985801835"
       // };
       firebase.initializeApp(config);
-      const auth = firebase.auth();
-      const db = firebase.firestore();
+      // const auth = firebase.auth();
+      // const db = firebase.firestore();
     </script>
-    <script src="main.js"></script>
-    <script src="posts.js"></script>
+    <script src="firebase.js"></script>
     <script src="auth.js"></script>
+    <script src="spa.js"></script>
+    <script src="main1.js"></script>
+    <script src="posts.js"></script>
 </body>
 
 </html>

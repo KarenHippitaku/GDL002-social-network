@@ -31,12 +31,12 @@ const fixtureData = {
 
 firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-import { createUserWithEmailAndPassword } from '../src/auth.js';
+import { verify } from '../src/main1.js';
 
-describe('createUserWithEmailAndPassword', () => {
-  it('Debe crear un usuario', (done) => {
-    return createUserWithEmailAndPassword('nuevo ususario').then((email, password) => {
-      expect(result).toBe('el usuario fue creado');
+describe('verify', () => {
+  it('Debe verificar el usuario al enviar correo de confirmacion noreply@test.firebaseapp.com al correo del usuario test@test.la', () => {
+    return verify('test@test.la').then((user) => {
+      expect(user).toBe('el usuario fue verificado');
     });
   });
 });
